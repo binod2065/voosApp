@@ -1,0 +1,44 @@
+---
+import Form from "../../component/Form.astro";
+
+export const partial = true;
+const formData = [
+  {
+    tabName: "tab1",
+    input: [
+      {
+        type: "text",
+        name: "CardCode",
+        title: "Customer Code",
+        Attributes: {},
+      },
+      {
+        type: "text",
+        name: "CardName",
+        title: "Customer Name",
+        Attributes: {},
+      },
+      { type: "date", name: "DocDate", title: "Document Date", Attributes: {} },
+      {
+        type: "date",
+        name: "DocDueDate",
+        title: "Document Due Date",
+        Attributes: {},
+      },
+    ],
+  },
+  {
+    tabName: "tab2",
+    input: [
+      { type: "text", name: "Reamrks", title: "Reamrks", Attributes: {} },
+    ],
+  },
+];
+---
+
+<Form formData={formData} />
+<div class="form-content">
+  <label class="tabs__label">
+    <h3>Content</h3>
+  </label>
+</div>

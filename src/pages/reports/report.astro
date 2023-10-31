@@ -1,0 +1,17 @@
+---
+import db from "../../db";
+
+const data = await db(
+    'select top 100 "ItemCode", "ItemName" from OITM',
+);
+
+---
+<div>
+    {
+        data
+            ? data.map((el) => {
+                  return (<li> {el.ItemCode} -{el.ItemName}</li>)
+              })
+            : ""
+    }
+</div> 

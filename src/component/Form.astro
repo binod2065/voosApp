@@ -1,0 +1,55 @@
+---
+interface InputField {
+  type: string;
+  name: string;
+  title: string;
+  Attributes: Record<string, any>;
+}
+
+interface TabData {
+  tabName: string;
+  input: InputField[];
+}
+interface Props {
+  formData: TabData[];
+}
+
+const { formData } = Astro.props;
+---
+
+<form action="">
+  <div class="tabs">
+    {
+      formData.map((tab) => {
+        return (
+          <>
+            <input
+              type="radio"
+              class="tabs__radio"
+              name="tabs-example"
+              id={tab.tabName.replace(" ", "")}
+              checked
+            />
+            <label for={tab.tabName.replace(" ", "")} class="tabs__label">
+              <h2>{tab.tabName}</h2>
+            </label>
+            <div class="tabs__content">
+              {tab.input.map((fields) => {
+                return (
+                  <div class="input-box">
+                    <label class="form-label">{fields.title}</label>
+                    <input class="form-input"
+                      type={fields.type as astroHTML.JSX.HTMLInputTypeAttribute}
+                      name={fields.name}
+                    />
+                  </div>
+                );
+              })}
+            </div>
+          </>
+        );
+      })
+    }
+  </div>
+   <!-- class tabs -->
+</form>

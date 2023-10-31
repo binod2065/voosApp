@@ -1,0 +1,13 @@
+---
+const { rig } = Astro.params;
+import Table from "../../component/Table.astro";
+import db from "../../db";
+const sqlQuery = `SELECT T0."TransId", T2."AcctName",T1."Memo", T1."Ref1" as "DocNum",T1."Ref2" ,T0."SYSDeb" - T0."SYSCred" Total_USD 
+FROM JDT1 T0  INNER JOIN OJDT T1 ON T0."TransId" = T1."TransId"
+INNER JOIN OACT T2 ON T2."AcctCode" = T0."Account"
+WHERE T0."ProfitCode" = '${rig}'  and Month( T1."RefDate") = Month(Current_Date) and Year(T1."RefDate") = Year(Current_Date)`;
+
+const data = await db(sqlQuery);
+---
+
+{data.length > 0 ? <Table data={data} /> : "no data"}

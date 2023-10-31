@@ -1,0 +1,29 @@
+---
+const naavItems = [
+    { name: "Brand Name", icon: "logo-apple" },
+    { name: "Dashboard", icon: "home-outline", page:"/dashbord" },
+    { name: "Goods Issue", icon: "people-outline", page : "/goodsIssue/mainPage" },
+    { name: "Messages", icon: "chatbubble-outline" },
+    { name: "help", icon: "help-outline" },
+    { name: "Settings", icon: "settings-outline" }
+];
+---
+
+<div class="navigation">
+    <ul>
+        {
+            naavItems.map((el) => {
+                return (
+                    <li>
+                        <a hx-get={el.page} hx-target="#details" hx-swap="innerHTML" href="#">
+                            <span class="icon">
+                                <ion-icon name={el.icon} />
+                            </span>
+                            <span class="title">{el.name}</span>
+                        </a>
+                    </li>
+                );
+            })
+        }
+    </ul>
+</div>
