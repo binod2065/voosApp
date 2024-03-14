@@ -20,3 +20,4 @@ pnpm-debug.log*
 # macOS-specific files
 .DS_Store
 src/db/config.js
+src/db/index.js

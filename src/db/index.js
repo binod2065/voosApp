@@ -37,4 +37,4 @@ export default async (sql, params) => {
     return data;
 
 
-}
+};
