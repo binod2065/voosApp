@@ -1,0 +1,17 @@
+---
+import Table2 from "../../component/Table2.astro";
+import db from "../../db";
+const body = await Astro.request.formData();
+const docEntry = +body.get("docEntry");
+let result;
+if (docEntry > 0) {
+  const Query =
+    `Select "DocEntry", "LineNum", "ItemCode", "Dscription","OpenQty", "Price", "WhsCode", "U_CstCentrName", "OpenQty" "html:Return Qty" from IGE1 Where "DocEntry" = ?`;
+  result = await db(Query, [docEntry]);
+ 
+}
+---
+
+<div>
+  <Table2 data={result} />
+</div>

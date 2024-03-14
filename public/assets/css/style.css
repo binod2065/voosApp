@@ -299,35 +299,68 @@ body {
   border-radius: 6px;
 }
 
-.details table {
+ table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 10px;
+  font-size: .875rem;
 }
 .details table thead td {
   font-weight: 600;
 }
-.details .recentOrders table tr {
+ table tr {
   color: var(--black1);
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
-.details .recentOrders table tr:last-child {
+table tr:last-child {
   border-bottom: none;
 }
-.details .recentOrders table tbody tr:hover {
-  background: var(--blue);
-  color: var(--white);
+table tbody tr:hover {
+  background: #eaecee
 }
-.details .recentOrders table tr td {
+table tbody tr:scope {
+  border-bottom: 0.0625rem solid #0064
+}
+table tr td {
   padding: 10px;
 }
-.details .recentOrders table tr td:last-child {
+.InputBaseContentWrapper{
+  height: 100%;
+  box-sizing: border-box;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0;
+  vertical-align: middle;
+  margin: 0;
+  background: 0 100% / 100% 0.0625rem no-repeat linear-gradient(0deg, #556b81, #556b81) border-box;
+  background-color: #eff1f2;
+  border: 0.0625rem none #556b81;
+  border-radius: 0.25rem;
+}
+table tbody tr input{
+  background: transparent;
+  border: none;
+  font-style: normal;
+  font-size: .875rem;
+  font-family: "72","72full",Arial,Helvetica,sans-serif;
+  color: #131e29;
+  line-height: normal;
+  padding: 0 0.625rem;
+  height: 100%;
+  box-sizing: border-box;
+  min-width: 2.75rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: inherit;
+}
+table tr td:last-child {
   text-align: end;
 }
-.details .recentOrders table tr td:nth-child(2) {
+table tr td:nth-child(2) {
   text-align: end;
 }
-.details .recentOrders table tr td:nth-child(3) {
+table tr td:nth-child(3) {
   text-align: center;
 }
 .status.delivered {
