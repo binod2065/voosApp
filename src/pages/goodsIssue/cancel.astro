@@ -1,6 +1,7 @@
 ---
 import db from "../../db";
-const data = await db('Select top 100 "DocEntry", "DocNum", "DocDate" from OIGE Order by "CreateDate" desc');
+// const data = await db('Select top 100 "DocEntry", "DocNum", "DocDate" from OIGE Order by "CreateDate" desc');
+const data = await db('cancel');
 //console.log("cancel",data)
 ---
 <form hx-post="goodsIssue/getGoodsIssue" hx-target="this" hx-swap="innerHtml">

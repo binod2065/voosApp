@@ -63,7 +63,7 @@ return [
     }
   ]
 
-  if(sql == 'Select top 100 "DocEntry", "DocNum", "DocDate" from OIGE Order by "CreateDate" desc')
+  if(sql == 'cancel')
   return [
     {
       DocEntry: 15526,
@@ -577,7 +577,7 @@ return [
       { Total_USD: '103295.579000', ProfitCode: 'R29' }
     ]
 
-  if(sql == 'SELECT T0."TransId", T2."AcctName",T1."Memo", T1."Ref1" as "DocNum",T1."Ref2" ,T0."SYSDeb" - T0."SYSCred" Total_USD  FROM JDT1 T0  INNER JOIN OJDT T1 ON T0."TransId" = T1."TransId"   INNER JOIN OACT T2 ON T2."AcctCode" = T0."Account"  WHERE T0."ProfitCode" = '/R32/' and Month( T1."RefDate") = Month(Current_Date) and Year(T1."RefDate") = Year(Current_Date)')
+  if(sql == 'rig')
     return [
     {
       TransId: 68533,
