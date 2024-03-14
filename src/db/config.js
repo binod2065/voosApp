@@ -5,6 +5,6 @@ export default  {
     pwd: 'VOOS@lnx#1239',
     database: 'VOS',
     currentSchema : "VOOS_LIVE",
-  };
+  }
   
   
