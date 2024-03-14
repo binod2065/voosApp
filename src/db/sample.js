@@ -567,4 +567,338 @@ return [
     }
   ]
 
+  if(sql == `SELECT SUM(T0."SYSDeb" - T0."SYSCred") "Total_USD"  , T0."ProfitCode" FROM JDT1 T0  INNER JOIN OJDT T1 ON T0."TransId" = T1."TransId" INNER JOIN OACT T2 ON T2."AcctCode" = T0."Account" WHERE T0."ProfitCode" LIKE 'R%'  and Month( T1."RefDate") = Month(Current_Date) and Year(T1."RefDate") = Year(Current_Date) group By T0."ProfitCode"`)
+    return [
+      { Total_USD: '16817.404000', ProfitCode: 'R32' },
+      { Total_USD: '23237.821000', ProfitCode: 'R33' },
+      { Total_USD: '69357.446000', ProfitCode: 'R36' },
+      { Total_USD: '51348.895000', ProfitCode: 'R37' },
+      { Total_USD: '202893.694000', ProfitCode: 'R30' },
+      { Total_USD: '103295.579000', ProfitCode: 'R29' }
+    ]
+
+  if(sql == 'SELECT T0."TransId", T2."AcctName",T1."Memo", T1."Ref1" as "DocNum",T1."Ref2" ,T0."SYSDeb" - T0."SYSCred" Total_USD  FROM JDT1 T0  INNER JOIN OJDT T1 ON T0."TransId" = T1."TransId"   INNER JOIN OACT T2 ON T2."AcctCode" = T0."Account"  WHERE T0."ProfitCode" = '/R32/' and Month( T1."RefDate") = Month(Current_Date) and Year(T1."RefDate") = Year(Current_Date)')
+    return [
+    {
+      TransId: 68533,
+      AcctName: 'Mud Pump',
+      Memo: 'Goods Issue',
+      DocNum: '17578',
+      Ref2: '_6UM03EAIO',
+      TOTAL_USD: '1063.634000'
+    },
+    {
+      TransId: 68552,
+      AcctName: 'Inventory Returned',
+      Memo: 'Feb2024 PO accrual(Reversal) - 68542',
+      DocNum: '',
+      Ref2: '',
+      TOTAL_USD: '-15605.139000'
+    },
+    {
+      TransId: 68586,
+      AcctName: 'Diesel Back Charge',
+      Memo: 'A/R Credit Memos - HAL',
+      DocNum: '89',
+      Ref2: '',
+      TOTAL_USD: '7377.989000'
+    },
+    {
+      TransId: 68594,
+      AcctName: 'Rig Move Expenses',
+      Memo: 'A/P Invoices - V00032',
+      DocNum: '34569',
+      Ref2: 'A-11490/24, ROP ESCORT, RIG 32, MAR 2024',
+      TOTAL_USD: '994.764000'
+    },
+    {
+      TransId: 68595,
+      AcctName: 'Rig Move Expenses',
+      Memo: 'A/P Invoices - V00032',
+      DocNum: '34570',
+      Ref2: 'A-11489/24, RIG MOVE, 5.3 KM, RIG 32, MAR 2024',
+      TOTAL_USD: '27523.220000'
+    },
+    {
+      TransId: 68595,
+      AcctName: 'Fuel Expenses',
+      Memo: 'A/P Invoices - V00032',
+      DocNum: '34570',
+      Ref2: 'A-11489/24, RIG MOVE, 5.3 KM, RIG 32, MAR 2024',
+      TOTAL_USD: '-2436.817000'
+    },
+    {
+      TransId: 68050,
+      AcctName: 'Accumulator',
+      Memo: 'Goods Issue',
+      DocNum: '17522',
+      Ref2: 'MTF-852',
+      TOTAL_USD: '79.380000'
+    },
+    {
+      TransId: 68051,
+      AcctName: 'Camp Supplies',
+      Memo: 'Goods Issue',
+      DocNum: '17523',
+      Ref2: '_6UC1FA947',
+      TOTAL_USD: '23.037000'
+    },
+    {
+      TransId: 68051,
+      AcctName: 'Solid Control System',
+      Memo: 'Goods Issue',
+      DocNum: '17523',
+      Ref2: '_6UC1FA947',
+      TOTAL_USD: '216.055000'
+    },
+    {
+      TransId: 68051,
+      AcctName: 'Mud Pump',
+      Memo: 'Goods Issue',
+      DocNum: '17523',
+      Ref2: '_6UC1FA947',
+      TOTAL_USD: '70.026000'
+    },
+    {
+      TransId: 68053,
+      AcctName: 'Safety Material & PPE Expenses',
+      Memo: 'Goods Issue',
+      DocNum: '17525',
+      Ref2: '',
+      TOTAL_USD: '2.121000'
+    },
+    {
+      TransId: 68075,
+      AcctName: 'Electrical Equipment / Supplies',
+      Memo: 'Goods Issue',
+      DocNum: '17532',
+      Ref2: '_6SW0N660B',
+      TOTAL_USD: '13.000000'
+    },
+    {
+      TransId: 68075,
+      AcctName: 'Hand Tools And Equipment',
+      Memo: 'Goods Issue',
+      DocNum: '17532',
+      Ref2: '_6SW0N660B',
+      TOTAL_USD: '162.303000'
+    },
+    {
+      TransId: 68106,
+      AcctName: 'Bop',
+      Memo: 'Goods Issue',
+      DocNum: '17539',
+      Ref2: '_6UF1F9DLI',
+      TOTAL_USD: '20200.000000'
+    },
+    {
+      TransId: 68107,
+      AcctName: 'Safety Material & PPE Expenses',
+      Memo: 'Goods Issue',
+      DocNum: '17540',
+      Ref2: '_6UF05M5VB',
+      TOTAL_USD: '253.343000'
+    },
+    {
+      TransId: 68112,
+      AcctName: 'Safety & Medical Test Expenses',
+      Memo: 'A/P Invoices - V00014',
+      DocNum: '34443',
+      Ref2: '116/01/2024, MEDICAL CHARGES, JAN 2024',
+      TOTAL_USD: '52.356000'
+    },
+    {
+      TransId: 68153,
+      AcctName: 'Certificate and Inspection',
+      Memo: 'A/P Invoices - V00111',
+      DocNum: '34466',
+      Ref2: 'INV2024-00208',
+      TOTAL_USD: '314.136000'
+    },
+    {
+      TransId: 68181,
+      AcctName: 'Power Washer',
+      Memo: 'Goods Issue',
+      DocNum: '17545',
+      Ref2: '_6UH05538B',
+      TOTAL_USD: '176.123000'
+    },
+    {
+      TransId: 68182,
+      AcctName: 'Power Washer',
+      Memo: 'Goods Issue',
+      DocNum: '17546',
+      Ref2: '_6UH05538B',
+      TOTAL_USD: '176.123000'
+    },
+    {
+      TransId: 68184,
+      AcctName: 'Safety Material & PPE Expenses',
+      Memo: 'Goods Issue',
+      DocNum: '17548',
+      Ref2: '_6UH0AL4FP',
+      TOTAL_USD: '255.418000'
+    },
+    {
+      TransId: 68188,
+      AcctName: 'Mast & Substructure',
+      Memo: 'A/P Invoices - V00203',
+      DocNum: '34490',
+      Ref2: 'FZE/Q/228',
+      TOTAL_USD: '28120.300000'
+    },
+    {
+      TransId: 68261,
+      AcctName: 'Rig Moves /RM additional charges',
+      Memo: 'A/R Invoices - HAL',
+      DocNum: '22893',
+      Ref2: 'VO-I-32-22-2024',
+      TOTAL_USD: '-55000.000000'
+    },
+    {
+      TransId: 68326,
+      AcctName: 'Camp Supplies',
+      Memo: 'Goods Issue',
+      DocNum: '17553',
+      Ref2: '',
+      TOTAL_USD: '596.859000'
+    },
+    {
+      TransId: 68403,
+      AcctName: 'Camp Supplies',
+      Memo: 'A/P Invoices - V00376',
+      DocNum: '34512',
+      Ref2: 'VLN001296',
+      TOTAL_USD: '61.518000'
+    },
+    {
+      TransId: 68424,
+      AcctName: 'Safety Material & PPE Expenses',
+      Memo: 'Goods Issue',
+      DocNum: '17555',
+      Ref2: '_6UJ0BNL66',
+      TOTAL_USD: '114.707000'
+    },
+    {
+      TransId: 68426,
+      AcctName: 'Welding Tools & Supplies',
+      Memo: 'Goods Issue',
+      DocNum: '17557',
+      Ref2: '',
+      TOTAL_USD: '102.094000'
+    },
+    {
+      TransId: 68428,
+      AcctName: 'Bop',
+      Memo: 'Goods Issue',
+      DocNum: '17559',
+      Ref2: '_6UJ03C0EE',
+      TOTAL_USD: '200.647000'
+    },
+    {
+      TransId: 68428,
+      AcctName: 'Choke Manifold',
+      Memo: 'Goods Issue',
+      DocNum: '17559',
+      Ref2: '_6UJ03C0EE',
+      TOTAL_USD: '42.445000'
+    },
+    {
+      TransId: 68428,
+      AcctName: 'Accumulator',
+      Memo: 'Goods Issue',
+      DocNum: '17559',
+      Ref2: '_6UJ03C0EE',
+      TOTAL_USD: '79.851000'
+    },
+    {
+      TransId: 68428,
+      AcctName: 'Iron Roughneck',
+      Memo: 'Goods Issue',
+      DocNum: '17559',
+      Ref2: '_6UJ03C0EE',
+      TOTAL_USD: '209.547000'
+    },
+    {
+      TransId: 68428,
+      AcctName: 'Mud Pump',
+      Memo: 'Goods Issue',
+      DocNum: '17559',
+      Ref2: '_6UJ03C0EE',
+      TOTAL_USD: '34.031000'
+    },
+    {
+      TransId: 68428,
+      AcctName: 'General Spares',
+      Memo: 'Goods Issue',
+      DocNum: '17559',
+      Ref2: '_6UJ03C0EE',
+      TOTAL_USD: '13.613000'
+    },
+    {
+      TransId: 68428,
+      AcctName: 'Tubular (Casing)',
+      Memo: 'Goods Issue',
+      DocNum: '17559',
+      Ref2: '_6UJ03C0EE',
+      TOTAL_USD: '23.099000'
+    },
+    {
+      TransId: 68428,
+      AcctName: 'Winch & Hoist Spares',
+      Memo: 'Goods Issue',
+      DocNum: '17559',
+      Ref2: '_6UJ03C0EE',
+      TOTAL_USD: '119.853000'
+    },
+    {
+      TransId: 68428,
+      AcctName: 'Lubricants Only',
+      Memo: 'Goods Issue',
+      DocNum: '17559',
+      Ref2: '_6UJ03C0EE',
+      TOTAL_USD: '340.314000'
+    },
+    {
+      TransId: 68428,
+      AcctName: 'Handling Tools',
+      Memo: 'Goods Issue',
+      DocNum: '17559',
+      Ref2: '_6UJ03C0EE',
+      TOTAL_USD: '497.138000'
+    },
+    {
+      TransId: 68430,
+      AcctName: 'Safety Items',
+      Memo: 'Goods Issue',
+      DocNum: '17561',
+      Ref2: '',
+      TOTAL_USD: '66.492000'
+    },
+    {
+      TransId: 68484,
+      AcctName: 'Safety Material & PPE Expenses',
+      Memo: 'Goods Issue',
+      DocNum: '17573',
+      Ref2: '_6UK1AFGOA',
+      TOTAL_USD: '231.468000'
+    },
+    {
+      TransId: 68498,
+      AcctName: 'Rental Cars',
+      Memo: 'A/P Invoices - V00022',
+      DocNum: '34539',
+      Ref2: '16727, CHARGES TOWARDS, SEP 2023',
+      TOTAL_USD: '26.178000'
+    },
+    {
+      TransId: 68499,
+      AcctName: 'Rental Cars',
+      Memo: 'A/P Invoices - V00022',
+      DocNum: '34540',
+      Ref2: '16676, CHARGES TOWARDS, RIG 32, SEP 2023',
+      TOTAL_USD: '26.178000'
+    }
+  ]
+
 }

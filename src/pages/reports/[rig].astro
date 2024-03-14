@@ -8,6 +8,7 @@ INNER JOIN OACT T2 ON T2."AcctCode" = T0."Account"
 WHERE T0."ProfitCode" = '${rig}'  and Month( T1."RefDate") = Month(Current_Date) and Year(T1."RefDate") = Year(Current_Date)`;
 
 const data = await db(sqlQuery);
+//console.log(data)
 ---
 
 {data.length > 0 ? <Table data={data} /> : "no data"}
