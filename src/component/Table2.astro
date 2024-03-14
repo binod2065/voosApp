@@ -1,0 +1,68 @@
+---
+const { data } = Astro.props;
+
+const colHead = Object.keys(data[0]);
+---
+
+<div class="dtContainer" style='font-family: "Segoe UI", Arial, sans-serif;'>
+  <h4>My Data Table</h4><div class="headerContainer">
+    <div>
+      <div class="perPageSelectorDiv">Entries</div><select
+        ><option value="5">5</option><option value="10">10</option><option
+          value="20">20</option
+        ><option value="50">50</option><option value="100">100</option></select
+      >
+    </div><input type="search" placeholder="Search" />
+  </div><div class="tableContainer" style="height: 17rem;">
+    <table id="myDataTable">
+      <thead>
+        <tr>
+          {
+            colHead.map((el) => {
+              return <th>{el}</th>;
+            })
+          }
+        </tr>
+      </thead>
+      <tbody>
+        {
+          data.map((tr) => {
+            return (
+              <tr>
+                {Object.entries(tr).map((td) => {
+                  if (td[0].startsWith("html:")) {
+                    if (!+td[1]) {
+                      return (
+                        <td>
+                          <div class="InputBaseContentWrapper">
+                            <input type="text" name={td[0]} value={+td[1]} />
+                          </div>
+                        </td>
+                      );
+                    } else {
+                      return (
+                        <td>
+                          <div class="InputBaseContentWrapper">
+                            <input type="number" name={td[0]} value={+td[1]} />
+                          </div>
+                        </td>
+                      );
+                    }
+                  } else {
+                    return <td>{td[1]}</td>;
+                  }
+                })}
+              </tr>
+            );
+          })
+        }
+      </tbody>
+    </table>
+  </div><div class="paginationContainer">
+    <div>
+      <button class="previous" disabled="">Previous</button><button
+        class="page active">1</button
+      ><button class="next" disabled="">Next</button>
+    </div><div class="paginationHelper"></div>
+  </div>
+</div>

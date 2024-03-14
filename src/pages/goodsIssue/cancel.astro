@@ -1,0 +1,35 @@
+---
+import db from "../../db";
+const data = await db('Select top 100 "DocEntry", "DocNum", "DocDate" from OIGE Order by "CreateDate" desc');
+//console.log("cancel",data)
+---
+<form hx-post="goodsIssue/getGoodsIssue" hx-target="this" hx-swap="innerHtml">
+<div class="input-box">
+  <label class="form-lebel" for="browser">select or Enter Issue Number here</label>
+  <input class="form-input" list="browsers" name="docEntry" id="browser" />
+
+  <datalist id="browsers">
+    {
+      data.map((el : {DocEntry : number, DocNum : String, DocDate : string}) => {
+        return <option value={el.DocEntry}><strong>{el.DocNum} - {el.DocDate.substring(0, 10)}</strong></option>;
+      })
+    }
+  </datalist>
+</div>
+</form>
+<style>
+  option {
+    font-weight: normal;
+    display: block;
+    white-space-collapse: collapse;
+    text-wrap: pretty;
+    min-height: 1.2em;
+    padding: 0px 2px 1px;
+  }
+  input::-webkit-search-results-button {
+  display: none;
+}
+input {
+  max-width: 200px;
+}
+</style>

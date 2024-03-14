@@ -15,17 +15,31 @@ const colHead = Object.keys(data[0]);
     </tr>
   </thead>
   <tbody>
-    {
-      data.map((tr: {}) => {
+  {
+      data.map(tr => {
         return (
           <tr>
-            {Object.entries(tr).map((td) => {
-              return <td>{td[1]}</td>;
-            })}
+            {Object.entries(tr).map(td  => {
+              if (td[0].startsWith("html:")){
+              
+                if(! +td[1]) {
+                  return  (<td><div class="InputBaseContentWrapper"><input type="text" name={td[0]} value={+td[1]}/></div></td>)
+                } 
+                else{
+                  return   (<td><div class="InputBaseContentWrapper"><input type="number" name={td[0]} value={+td[1]}/></div></td>)
+                }
+             
+            }
+              else{
+                return (<td>{td[1]}</td>);
+              
+            }
+            }
+            )}
           </tr>
-        );
+        )
       })
     }
   </tbody>
-  <tfoot> </tfoot>
+
 </table>

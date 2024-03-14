@@ -1,4 +1,4 @@
-import hana, { ResultSet } from "@sap/hana-client"
+import hana from "@sap/hana-client"
 
 import PromiseModule from "@sap/hana-client/extension/Promise.js";
 import conn_params from "./config.js"
@@ -6,9 +6,10 @@ import conn_params from "./config.js"
 
 /**
  * @param { string} sql
+ * @param {[number | string]} [params]
  * @returns {Array[any]}
  */
-export default async (sql) => {
+export default async (sql, params) => {
 
     const data = [];
     const conn = hana.createConnection();
@@ -18,7 +19,7 @@ export default async (sql) => {
         }).catch((err) => {
            throw new Error("Invalid Query : ", err.message)
         })
-    const rsp = await PromiseModule.executeQuery(stmt)
+    const rsp = await PromiseModule.executeQuery(stmt, params)
         .then((rs) => {
             return rs
         }).catch((err) => {

@@ -4,6 +4,7 @@ import db from "../db";
 const data = await db(
   `SELECT SUM(T0."SYSDeb" - T0."SYSCred") "Total_USD"  , T0."ProfitCode" FROM JDT1 T0  INNER JOIN OJDT T1 ON T0."TransId" = T1."TransId" INNER JOIN OACT T2 ON T2."AcctCode" = T0."Account" WHERE T0."ProfitCode" LIKE 'R%'  and Month( T1."RefDate") = Month(Current_Date) and Year(T1."RefDate") = Year(Current_Date) group By T0."ProfitCode"`
 );
+//console.log(data)
 ---
 
 <div class="cardBox">
