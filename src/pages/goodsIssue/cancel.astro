@@ -5,8 +5,8 @@ const data = await db('cancel');
 //console.log("cancel",data)
 ---
 <form hx-post="goodsIssue/getGoodsIssue" hx-target="this" hx-swap="innerHtml">
-<div class="input-box">
-  <label class="form-lebel" for="browser">select or Enter Issue Number here</label>
+<div class="input-box datalist--div">
+  <label class="form-lebel" for="browser">Select or Enter Issue Number here</label>
   <input class="form-input" list="browsers" name="docEntry" id="browser" />
 
   <datalist id="browsers">

@@ -19,11 +19,12 @@ const data = await db(
             hx-swap="innerHTML"
             class="card"
           >
+          <div class="card-leftPart">
             <div class="numbers">
               {((el.Total_USD as number) / 1000).toFixed(2)}
             </div>
             <div class="cardName">{el.ProfitCode}</div>
-
+            </div>
             <div class="iconBx">
               <ion-icon name="eye-outline" />
             </div>
